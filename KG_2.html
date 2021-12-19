@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CMYK dots</title>
+</head>
+<body>
+<canvas id="canvas" style="background-color:black;width:500px;height:500px;position:absolute;left:50%;margin-left:-250px;top:50%;margin-top:-250px;">Обновите браузер</canvas>
+<script>
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    var r = 5, rad=5, a = 0, sin=0, x1 = rad, y1 = rad;
+    function draw() {
+        ctx.beginPath();
+        ctx.arc(-23*x1+6*r*i + a, y1 + 12*r* j, rad,0, 2*Math.PI);
+
+        ctx.fillStyle = "rgb(255,255,255)"
+        ctx.fillRect(0, 0, 500, 500);
+        for (var j = 0; j < 20; j++) {
+            for (var i = 0; i < 20; i++) {
+                ctx.beginPath();
+                ctx.arc(-23*x1+6*r*i + a, y1 + 12*r* j, rad,0, 2*Math.PI);
+                ctx.fillStyle = "rgb(255,234,0)"
+                ctx.fill();
+                ctx.closePath();
+            }
+        }
+
+        for (var j = 0; j < 20; j++) {
+            for (var i = 0; i < 20; i++) {
+                ctx.beginPath();
+                ctx.arc(-41*x1+6*r*i - a, 7*y1 + 12*r* j, rad, 0, 2 * Math.PI);
+                ctx.fillStyle = "rgb(255,234,0)"
+                ctx.fill();
+                ctx.closePath();
+            }
+        }
+
+        for (var j = 0; j < 20; j++) {
+            for (var i = 0; i < 20; i++) {
+                ctx.beginPath();
+                ctx.arc(-47*x1 + 6 * r * i + 12*r*j - a, y1 + 6 * r *i - a, rad, 0, 2 * Math.PI);
+                ctx.fillStyle = "rgb(255,0,0)"
+                ctx.fill();
+                ctx.closePath();
+
+            }
+        }
+
+        for (var j = 0; j < 20; j++) {
+            for (var i = 0; i < 20; i++) {
+                ctx.beginPath();
+                ctx.arc(-65*x1 + 6 * r * i + 12*r*j + a, -23*y1 + 6 * r *i + a, rad, 0, 2 * Math.PI);
+                ctx.fillStyle = "rgb(255,0,0)"
+                ctx.fill();
+                ctx.closePath();
+            }
+        }
+
+
+        for (var j = 0; j < 20; j++) {
+            for (var i = 0; i < 20; i++) {
+                ctx.beginPath();
+
+                ctx.arc(-71*x1 + 6 * r * i + 12*r*j + a, y1 + 6 * r *i - a, rad, 0, 2 * Math.PI);
+                ctx.fillStyle = "rgb(0,0,255)"
+                if(-71*x1 + 6 * r * i + 12*r*j + a==-65*x1 + 6 * r * i + 12*r*j + a){
+                    ctx.fillStyle="rgb(0,0,0)"
+
+                }
+                if(-71*x1 + 6 * r * i + 12*r*j + a==-47*x1 + 6 * r * i + 12*r*j - a){
+                    ctx.fillStyle="rgb(0,0,0)"
+                }
+                ctx.fill();
+                ctx.closePath();
+
+            }
+        }
+
+        for (var j = 0; j < 20; j++) {
+            for (var i = 0; i < 20; i++) {
+                ctx.beginPath();
+                ctx.arc(-113*x1 + 6 * r * i + 12*r*j - a, -23*y1 + 6 * r *i + a, rad, 0, 2 * Math.PI);
+                ctx.fillStyle = "rgb(0,0,255)"
+                if(-113*x1 + 6 * r * i + 12*r*j - a==-65*x1 + 6 * r * i + 12*r*j + a){
+                    ctx.fillStyle="rgb(0,0,0)"
+                    console.log('Привет от JavaScript!');
+
+                }
+                if(-113*x1 + 6 * r * i + 12*r*j - a==-47*x1 + 6 * r * i + 12*r*j - a){
+                    ctx.fillStyle="rgb(0,0,0)"
+                    console.log('Привет от JavaScript!');
+
+                }
+                ctx.fill();
+                ctx.closePath();
+            }
+        }
+        if(1!=0){
+
+        }
+        a+=1;
+        if(a > 12*r){
+            a=1;
+        }
+        if(sin == Math.PI) sin = 0;
+
+    }
+    draw();
+    canvas.addEventListener("click", draw);
+    setInterval(draw, 25);
+</script>
+</body>
+</html>
